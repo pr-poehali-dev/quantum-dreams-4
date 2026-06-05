@@ -7,8 +7,8 @@ export function AboutSection({ scrollToSection }: { scrollToSection?: (index: nu
   return (
     <section
       ref={ref}
-      className="flex h-screen w-screen shrink-0 snap-start items-center px-4 pt-20 md:px-12 md:pt-0 lg:px-16"
-      style={{ paddingTop: `calc(env(safe-area-inset-top) + 5rem)`, paddingBottom: `env(safe-area-inset-bottom)` }}
+      className="flex w-screen shrink-0 snap-start items-center px-4 md:px-12 lg:px-16"
+      style={{ height: '100dvh', paddingTop: `calc(env(safe-area-inset-top) + 5rem)`, paddingBottom: `env(safe-area-inset-bottom)` }}
     >
       <div className="mx-auto w-full max-w-7xl">
         <div className="grid gap-8 md:grid-cols-2 md:gap-16 lg:gap-24">

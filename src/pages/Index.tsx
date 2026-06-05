@@ -140,7 +140,7 @@ export default function Index() {
   }, [currentSection])
 
   return (
-    <main className="relative h-screen w-full overflow-hidden bg-background">
+    <main className="relative w-full overflow-hidden bg-background" style={{ height: '100dvh' }}>
       <GrainOverlay />
 
       <div className="fixed inset-0 z-0">
@@ -217,11 +217,11 @@ export default function Index() {
       <div
         ref={scrollContainerRef}
         data-scroll-container
-        className="relative z-10 flex h-screen overflow-x-auto overflow-y-hidden"
-        style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+        className="relative z-10 flex overflow-x-auto overflow-y-hidden"
+        style={{ height: '100dvh', scrollbarWidth: "none", msOverflowStyle: "none" }}
       >
         {/* Hero Section */}
-        <section className="flex min-h-screen w-screen shrink-0 flex-col justify-end px-6 pt-24 md:px-12 md:pb-24" style={{ paddingBottom: `calc(env(safe-area-inset-bottom) + 4rem)` }}>
+        <section className="flex w-screen shrink-0 flex-col justify-end px-6 pt-24 md:px-12 md:pb-24" style={{ minHeight: '100dvh', paddingTop: `calc(env(safe-area-inset-top) + 6rem)`, paddingBottom: `calc(env(safe-area-inset-bottom) + 4rem)` }}>
           <div className="max-w-3xl">
             <div className="mb-6 animate-in fade-in slide-in-from-bottom-4 duration-700">
               <img

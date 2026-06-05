@@ -222,7 +222,7 @@ export default function Index() {
           <img
             src="https://cdn.poehali.dev/projects/48bbfd93-e9a9-497a-be13-9427d5690a58/bucket/ba2b3201-7e32-4b09-a9bd-1a2d0c8dc85b.JPG"
             alt="Мегаполис"
-            className="h-10 w-10 rounded-lg object-cover"
+            className="h-10 w-10 rounded-full object-cover"
           />
           <span className="font-sans text-xl font-semibold tracking-tight text-foreground">Мегаполис</span>
         </button>

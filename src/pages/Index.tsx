@@ -274,7 +274,7 @@ export default function Index() {
             </div>
             <h1 className="mb-8 animate-in fade-in slide-in-from-bottom-8 font-sans text-3xl font-light leading-[1.1] tracking-tight text-foreground duration-1000 md:text-4xl lg:text-4xl">
               <span className="text-balance">
-                Всегда вперёд и энергетика России будет первой
+                Всегда вперёд и энергетика<br />России будет первой
               </span>
             </h1>
             <p className="mb-8 max-w-xl animate-in fade-in slide-in-from-bottom-4 text-lg leading-relaxed text-foreground/90 duration-1000 delay-200 md:text-xl">

@@ -1,3 +1,4 @@
+import { Shader, ChromaFlow, Swirl } from "shaders/react"
 import { GrainOverlay } from "@/components/grain-overlay"
 import { WorkSection } from "@/components/sections/work-section"
 import { ServicesSection } from "@/components/sections/services-section"
@@ -142,10 +143,36 @@ export default function Index() {
     <main className="relative h-screen w-full overflow-hidden bg-background">
       <GrainOverlay />
 
-      <div
-        className="fixed inset-0 z-0"
-        style={{ background: "radial-gradient(ellipse at 60% 40%, #D4621A 0%, #C85A15 30%, #3a2010 70%, #1a1a1a 100%)" }}
-      />
+      <div className="fixed inset-0 z-0">
+        <Shader className="h-full w-full">
+          <Swirl
+            colorA="#F07820"
+            colorB="#8B3A00"
+            speed={0.8}
+            detail={0.8}
+            blend={50}
+            coarseX={40}
+            coarseY={40}
+            mediumX={40}
+            mediumY={40}
+            fineX={40}
+            fineY={40}
+          />
+          <ChromaFlow
+            baseColor="#F07820"
+            upColor="#FF9940"
+            downColor="#1a1a1a"
+            leftColor="#8B3A00"
+            rightColor="#F07820"
+            intensity={0.9}
+            radius={1.8}
+            momentum={25}
+            maskType="alpha"
+            opacity={0.97}
+          />
+        </Shader>
+        <div className="absolute inset-0 bg-black/20" />
+      </div>
 
       <nav
         className="fixed left-0 right-0 top-0 z-50 flex items-center justify-between px-6 py-6 md:px-12"

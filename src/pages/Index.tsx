@@ -262,6 +262,13 @@ export default function Index() {
         {/* Hero Section */}
         <section className="flex min-h-screen w-screen shrink-0 flex-col justify-end px-6 pb-16 pt-24 md:px-12 md:pb-24">
           <div className="max-w-3xl">
+            <div className="mb-6 animate-in fade-in slide-in-from-bottom-4 duration-700">
+              <img
+                src="https://cdn.poehali.dev/projects/48bbfd93-e9a9-497a-be13-9427d5690a58/bucket/ba2b3201-7e32-4b09-a9bd-1a2d0c8dc85b.JPG"
+                alt="Мегаполис"
+                className="h-20 w-20 rounded-full object-cover ring-2 ring-foreground/20"
+              />
+            </div>
             <div className="mb-4 inline-block animate-in fade-in slide-in-from-bottom-4 rounded-full border border-foreground/20 bg-foreground/15 px-4 py-1.5 backdrop-blur-md duration-700">
               <p className="font-mono text-xs text-foreground/90">Строительство · Безопасность · Санкт-Петербург</p>
             </div>

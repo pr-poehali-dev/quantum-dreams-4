@@ -144,7 +144,7 @@ export default function Index() {
 
       <div
         className="fixed inset-0 z-0"
-        style={{ background: "radial-gradient(ellipse at 60% 40%, #8B3A00 0%, #1a1a1a 70%)" }}
+        style={{ background: "radial-gradient(ellipse at 60% 40%, #D4621A 0%, #C85A15 30%, #3a2010 70%, #1a1a1a 100%)" }}
       />
 
       <nav

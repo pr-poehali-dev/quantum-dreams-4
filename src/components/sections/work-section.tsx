@@ -24,22 +24,22 @@ export function WorkSection() {
           {[
             {
               number: "01",
-              title: "CloudPilot",
-              category: "SaaS · Аналитика данных",
+              title: "Энергетический объект СПб",
+              category: "Общестроительные работы · Промышленность",
               year: "2025",
               direction: "left",
             },
             {
               number: "02",
-              title: "NovaAgency",
-              category: "Digital-агентство · Лендинг",
+              title: "Комплекс видеонаблюдения",
+              category: "Системы безопасности · СКУД",
               year: "2024",
               direction: "right",
             },
             {
               number: "03",
-              title: "LaunchKit",
-              category: "Стартап · Продуктовая платформа",
+              title: "Охранный периметр объекта",
+              category: "Инженерно-технические средства охраны",
               year: "2024",
               direction: "left",
             },

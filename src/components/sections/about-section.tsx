@@ -21,9 +21,9 @@ export function AboutSection({ scrollToSection }: { scrollToSection?: (index: nu
               <h2 className="mb-3 font-sans text-3xl font-light leading-[1.1] tracking-tight text-foreground md:mb-4 md:text-6xl lg:text-7xl">
                 Строим
                 <br />
-                цифровые
+                надёжно
                 <br />
-                <span className="text-foreground/40">продукты</span>
+                <span className="text-foreground/40">и в срок</span>
               </h2>
             </div>
 
@@ -34,10 +34,10 @@ export function AboutSection({ scrollToSection }: { scrollToSection?: (index: nu
               style={{ transitionDelay: "200ms" }}
             >
               <p className="max-w-md text-sm leading-relaxed text-foreground/90 md:text-lg">
-                Мы — команда, которая превращает идею в работающий цифровой продукт: SaaS-сервисы, лендинги для агентств и стартапов с премиальной эстетикой.
+                ООО «Мегаполис» — строительная компания из Санкт-Петербурга. Выполняем общестроительные работы и создаём комплексные инженерно-технические средства охраны.
               </p>
               <p className="max-w-md text-sm leading-relaxed text-foreground/90 md:text-lg">
-                Каждый проект — это не просто сайт, а инструмент роста: эффектный первый экран, конвертирующая структура и технологии, которые работают.
+                Специализируемся на объектах энергетики и промышленности. Работаем под ключ: от проектирования до монтажа и сдачи в эксплуатацию.
               </p>
             </div>
           </div>
@@ -45,9 +45,9 @@ export function AboutSection({ scrollToSection }: { scrollToSection?: (index: nu
           {/* Right side - Stats with creative layout */}
           <div className="flex flex-col justify-center space-y-6 md:space-y-12">
             {[
-              { value: "80+", label: "Проектов", sublabel: "SaaS и digital-продуктов", direction: "right" },
-              { value: "5", label: "Лет", sublabel: "В цифровых продуктах", direction: "left" },
-              { value: "3×", label: "Конверсия", sublabel: "Выше среднего по рынку", direction: "right" },
+              { value: "50+", label: "Объектов", sublabel: "Сдано под ключ", direction: "right" },
+              { value: "10", label: "Лет", sublabel: "На строительном рынке", direction: "left" },
+              { value: "100%", label: "В срок", sublabel: "Гарантируем сроки сдачи", direction: "right" },
             ].map((stat, i) => {
               const getRevealClass = () => {
                 if (!isVisible) {
@@ -84,10 +84,10 @@ export function AboutSection({ scrollToSection }: { scrollToSection?: (index: nu
           style={{ transitionDelay: "750ms" }}
         >
           <MagneticButton size="lg" variant="primary" onClick={() => scrollToSection?.(4)}>
-            Начать проект
+            Обсудить объект
           </MagneticButton>
           <MagneticButton size="lg" variant="secondary" onClick={() => scrollToSection?.(1)}>
-            Смотреть работы
+            Наши проекты
           </MagneticButton>
         </div>
       </div>

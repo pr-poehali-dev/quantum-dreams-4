@@ -7,7 +7,7 @@ export function WorkSection() {
     <section
       ref={ref}
       className="flex w-screen shrink-0 snap-start items-center px-6 md:px-12 lg:px-16"
-      style={{ height: '100dvh', paddingTop: `calc(env(safe-area-inset-top) + 5rem)`, paddingBottom: `env(safe-area-inset-bottom)` }}
+      style={{ minHeight: '100dvh', paddingTop: `calc(env(safe-area-inset-top) + 5rem)`, paddingBottom: `calc(env(safe-area-inset-bottom) + 2rem)` }}
     >
       <div className="mx-auto w-full max-w-7xl">
         <div

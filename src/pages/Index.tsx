@@ -12,22 +12,33 @@ import { useRef, useEffect, useState } from "react"
 export default function Index() {
   const scrollContainerRef = useRef<HTMLDivElement>(null)
   const [currentSection, setCurrentSection] = useState(0)
+  const [isMobile, setIsMobile] = useState(() => window.innerWidth < 768)
   const touchStartY = useRef(0)
   const touchStartX = useRef(0)
   const scrollThrottleRef = useRef<number>()
 
+  useEffect(() => {
+    const onResize = () => setIsMobile(window.innerWidth < 768)
+    window.addEventListener("resize", onResize)
+    return () => window.removeEventListener("resize", onResize)
+  }, [])
+
   const scrollToSection = (index: number) => {
     if (scrollContainerRef.current) {
-      const sectionWidth = scrollContainerRef.current.offsetWidth
-      scrollContainerRef.current.scrollTo({
-        left: sectionWidth * index,
-        behavior: "smooth",
-      })
+      if (isMobile) {
+        const sectionHeight = scrollContainerRef.current.offsetHeight
+        scrollContainerRef.current.scrollTo({ top: sectionHeight * index, behavior: "smooth" })
+      } else {
+        const sectionWidth = scrollContainerRef.current.offsetWidth
+        scrollContainerRef.current.scrollTo({ left: sectionWidth * index, behavior: "smooth" })
+      }
       setCurrentSection(index)
     }
   }
 
   useEffect(() => {
+    if (isMobile) return
+
     const handleTouchStart = (e: TouchEvent) => {
       touchStartY.current = e.touches[0].clientY
       touchStartX.current = e.touches[0].clientX
@@ -68,7 +79,7 @@ export default function Index() {
         container.removeEventListener("touchend", handleTouchEnd)
       }
     }
-  }, [currentSection])
+  }, [currentSection, isMobile])
 
   useEffect(() => {
     const handleWheel = (e: WheelEvent) => {
@@ -112,9 +123,14 @@ export default function Index() {
           return
         }
 
-        const sectionWidth = scrollContainerRef.current.offsetWidth
-        const scrollLeft = scrollContainerRef.current.scrollLeft
-        const newSection = Math.round(scrollLeft / sectionWidth)
+        let newSection: number
+        if (isMobile) {
+          const sectionHeight = scrollContainerRef.current.offsetHeight
+          newSection = Math.round(scrollContainerRef.current.scrollTop / sectionHeight)
+        } else {
+          const sectionWidth = scrollContainerRef.current.offsetWidth
+          newSection = Math.round(scrollContainerRef.current.scrollLeft / sectionWidth)
+        }
 
         if (newSection !== currentSection && newSection >= 0 && newSection <= 5) {
           setCurrentSection(newSection)
@@ -137,10 +153,10 @@ export default function Index() {
         cancelAnimationFrame(scrollThrottleRef.current)
       }
     }
-  }, [currentSection])
+  }, [currentSection, isMobile])
 
   return (
-    <main className="relative w-full overflow-hidden bg-background" style={{ height: '100dvh' }}>
+    <main className="relative w-full bg-background" style={{ height: isMobile ? '100dvh' : '100dvh', overflow: 'hidden' }}>
       <GrainOverlay />
 
       <div className="fixed inset-0 z-0">
@@ -175,8 +191,8 @@ export default function Index() {
       </div>
 
       <nav
-        className="fixed left-0 right-0 top-0 z-50 flex items-center justify-between px-6 py-6 md:px-12"
-        style={{ paddingTop: `calc(env(safe-area-inset-top) + 1.5rem)` }}
+        className="fixed left-0 right-0 top-0 z-50 flex items-center justify-between px-6 pb-4 md:px-12"
+        style={{ paddingTop: `calc(env(safe-area-inset-top) + 1rem)` }}
       >
         <button
           onClick={() => scrollToSection(0)}
@@ -217,11 +233,14 @@ export default function Index() {
       <div
         ref={scrollContainerRef}
         data-scroll-container
-        className="relative z-10 flex overflow-x-auto overflow-y-hidden"
-        style={{ height: '100dvh', scrollbarWidth: "none", msOverflowStyle: "none" }}
+        className="relative z-10 flex"
+        style={isMobile
+          ? { flexDirection: 'column', height: '100dvh', overflowX: 'hidden', overflowY: 'auto', scrollbarWidth: 'none', msOverflowStyle: 'none' }
+          : { flexDirection: 'row', height: '100dvh', overflowX: 'auto', overflowY: 'hidden', scrollbarWidth: 'none', msOverflowStyle: 'none' }
+        }
       >
         {/* Hero Section */}
-        <section className="flex w-screen shrink-0 flex-col justify-end px-6 pt-24 md:px-12 md:pb-24" style={{ minHeight: '100dvh', paddingTop: `calc(env(safe-area-inset-top) + 6rem)`, paddingBottom: `calc(env(safe-area-inset-bottom) + 4rem)` }}>
+        <section className="flex w-screen shrink-0 flex-col justify-end px-6 md:px-12 md:pb-24" style={{ minHeight: '100dvh', paddingTop: `calc(env(safe-area-inset-top) + 5rem)`, paddingBottom: `calc(env(safe-area-inset-bottom) + 3rem)` }}>
           <div className="max-w-3xl">
             <div className="mb-6 animate-in fade-in slide-in-from-bottom-4 duration-700">
               <img

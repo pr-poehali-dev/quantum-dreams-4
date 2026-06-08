@@ -33,18 +33,18 @@ export function ContactSection() {
   return (
     <section
       ref={ref}
-      className="flex w-screen shrink-0 snap-start items-center px-4 md:px-12 lg:px-16"
-      style={{ height: '100dvh', paddingTop: `calc(env(safe-area-inset-top) + 5rem)`, paddingBottom: `env(safe-area-inset-bottom)` }}
+      className="flex w-screen shrink-0 snap-start px-4 md:items-center md:px-12 lg:px-16"
+      style={{ minHeight: '100dvh', height: 'auto', paddingTop: `calc(env(safe-area-inset-top) + 5rem)`, paddingBottom: `calc(env(safe-area-inset-bottom) + 2rem)` }}
     >
-      <div className="mx-auto w-full max-w-7xl">
-        <div className="grid gap-8 md:grid-cols-[1.2fr_1fr] md:gap-16 lg:gap-24">
+      <div className="mx-auto w-full max-w-7xl py-4 md:py-0">
+        <div className="flex flex-col gap-8 md:grid md:grid-cols-[1.2fr_1fr] md:gap-16 lg:gap-24">
           <div className="flex flex-col justify-center">
             <div
               className={`mb-6 transition-all duration-700 md:mb-12 ${
                 isVisible ? "translate-x-0 opacity-100" : "-translate-x-12 opacity-0"
               }`}
             >
-              <h2 className="mb-2 font-sans text-4xl font-light leading-[1.05] tracking-tight text-foreground md:mb-3 md:text-7xl lg:text-8xl">
+              <h2 className="mb-2 font-sans text-3xl font-light leading-[1.05] tracking-tight text-foreground md:mb-3 md:text-7xl lg:text-8xl">
                 Обсудим
                 <br />
                 объект

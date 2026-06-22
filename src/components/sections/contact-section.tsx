@@ -80,9 +80,7 @@ export function ContactSection() {
                   <Icon name="Phone" size={12} className="text-foreground/60" />
                   <span className="font-mono text-xs text-foreground/60">Телефон</span>
                 </div>
-                <p className="text-base text-foreground transition-colors group-hover:text-foreground/70 md:text-2xl">
-                  +7 963 320-13-26
-                </p>
+                <p className="text-base text-foreground transition-colors group-hover:text-foreground/70 md:text-2xl">+7 (812) 507-21-23</p>
               </a>
 
               <div

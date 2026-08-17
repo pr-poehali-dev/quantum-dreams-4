@@ -93,7 +93,7 @@ export function ContactSection() {
                   <Icon name="MapPin" size={12} className="text-foreground/60" />
                   <span className="font-mono text-xs text-foreground/60">Локация</span>
                 </div>
-                <p className="text-base text-foreground md:text-2xl">195197, Санкт-Петербург, ул. Минеральная, д. 13, лит. «З», каб. 8</p>
+                <p className="text-base text-foreground md:text-2xl">195197, Санкт-Петербург, Кондратьевский пр., д. 15, к. 2 лит. «З», каб. 210</p>
               </div>
 
               <div

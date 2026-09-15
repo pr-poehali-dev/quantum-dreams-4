@@ -199,7 +199,7 @@ export default function Index() {
           className="flex items-center gap-2 transition-transform hover:scale-105"
         >
           <img
-            src="https://cdn.poehali.dev/projects/48bbfd93-e9a9-497a-be13-9427d5690a58/bucket/ba2b3201-7e32-4b09-a9bd-1a2d0c8dc85b.JPG"
+            src="https://cdn.poehali.dev/projects/48bbfd93-e9a9-497a-be13-9427d5690a58/bucket/f2fafbcc-7447-4aa1-a077-95ea32d3926f.png"
             alt="Мегаполис"
             className="h-10 w-10 rounded-full object-cover"
           />
@@ -244,7 +244,7 @@ export default function Index() {
           <div className="max-w-3xl">
             <div className="mb-6 animate-in fade-in slide-in-from-bottom-4 duration-700">
               <img
-                src="https://cdn.poehali.dev/projects/48bbfd93-e9a9-497a-be13-9427d5690a58/bucket/ba2b3201-7e32-4b09-a9bd-1a2d0c8dc85b.JPG"
+                src="https://cdn.poehali.dev/projects/48bbfd93-e9a9-497a-be13-9427d5690a58/bucket/f2fafbcc-7447-4aa1-a077-95ea32d3926f.png"
                 alt="Мегаполис"
                 className="h-20 w-20 rounded-full object-cover ring-2 ring-foreground/20"
               />
